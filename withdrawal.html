@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retragere - ACC INVESTMENT</title>
+  <style>
+    body {
+      background-color: #000814;
+      color: #d4af37;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 { color: #00ff88; }
+    form {
+      max-width: 400px;
+      margin: auto;
+      background-color: #001d3d;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00ff88;
+    }
+    input, select {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
+    }
+    button {
+      background-color: #00ff88;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background: #001d3d;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 350px;
+      box-shadow: 0 0 15px #00ff88;
+    }
+  </style>
+  <script>
+    function showFee() {
+      document.getElementById("feeModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("feeModal").style.display = "none";
+    }
+  </script>
+</head>
+<body>
+
+<h1>Retragere Fonduri</h1>
+
+<form onsubmit="event.preventDefault(); showFee();">
+  <input type="text" placeholder="Număr cont bancar" required>
+  <input type="text" placeholder="Numele titularului contului" required>
+
+  <select required>
+    <option value="">Selectează banca</option>
+    <option>Banca Transilvania</option>
+    <option>BRD – Groupe Société Générale</option>
+    <option>CEC Bank</option>
+    <option>Raiffeisen Bank România</option>
+    <option>UniCredit Bank România</option>
+    <option>ING Bank România</option>
+    <option>Alpha Bank România</option>
+    <option>Garanti BBVA România</option>
+    <option>OTP Bank România</option>
+    <option>First Bank România</option>
+    <option>Libra Internet Bank</option>
+  </select>
+
+  <input type="text" value="€40,000" readonly>
+
+  <button type="submit">Retrage</button>
+  <button type="button" onclick="window.location.href='index.html'">Înapoi</button>
+</form>
+
+<div id="feeModal" class="modal">
+  <div class="modal-content">
+    <h3>Este necesară o taxă de procesare de €1,200 pentru a finaliza retragerea.</h3>
+    <button onclick="closeModal()">Închide</button>
+  </div>
+</div>
+
+</body>
+</html>
